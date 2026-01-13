@@ -5,7 +5,7 @@ pluginManagement {
         mavenCentral()
     }
     plugins {
-        id("fabric-loom") version "1.14-SNAPSHOT"
+        id("fabric-loom") version "1.10.5"
         kotlin("jvm") version "1.9.23"
     }
 }
