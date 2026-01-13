@@ -122,7 +122,7 @@ If you encounter issues:
 ## Credits
 
 - **Original Creator**: NamelessJu
-- **Fabric Port**: NamelessJu (with Kirito assistance)
+- **Fabric Port**: Kirito
 - **Testing & Feedback**: Hypixel Community
 
 ## License
