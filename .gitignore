@@ -1,22 +1,33 @@
+# Gradle
 .gradle/
 build/
-out/
+gradle-app.setting
+
+# IDE
 .idea/
+.vscode/
 *.iml
 *.iws
 *.ipr
-.DS_Store
-.vscode/
-*.class
 .classpath
 .project
 .settings/
-eclipse/
-bin/
-.idea_modules/
+
+# OS
+.DS_Store
+Thumbs.db
 *.swp
 *.swo
 *~
-.vscode
-.run
-.metadata
+.venv
+
+# Build outputs
+out/
+*.class
+bin/
+
+# Project specific
+run/
+!gradle/wrapper/*
+.env
+local.properties

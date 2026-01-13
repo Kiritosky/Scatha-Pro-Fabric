@@ -1,34 +1,35 @@
 {
   "schemaVersion": 1,
-  "id": "scathapro",
+  "id": "scatha-pro",
   "version": "${version}",
-  "name": "Scatha-Pro",
+  "name": "${name}",
   "description": "${description}",
   "authors": [
-    "NamelessJu"
+    "${author}"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/scatha-pro",
-    "sources": "https://github.com/Kiritosky/Scatha-Pro-Fabric"
+    "homepage": "https://github.com/Kiritosky/Scatha-Pro-Fabric",
+    "sources": "https://github.com/Kiritosky/Scatha-Pro-Fabric",
+    "issues": "https://github.com/Kiritosky/Scatha-Pro-Fabric/issues"
   },
-  "license": "Custom",
-  "icon": "assets/scathapro/icon.png",
-  "environment": "client",
+  "license": "MIT",
+  "environment": "*",
   "entrypoints": {
     "main": [
-      "namelessju.scathapro.ScathaProFabric"
-    ],
-    "client": [
-      "namelessju.scathapro.client.ScathaProClientFabric"
+      "me.kiritosky.scathapro.ScathaProMod"
     ]
   },
   "mixins": [
-    "scathapro.mixins.json"
+    "scatha-pro.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
-    "minecraft": ">=${minecraft_version}",
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
     "fabric-api": "*",
     "fabric-language-kotlin": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }

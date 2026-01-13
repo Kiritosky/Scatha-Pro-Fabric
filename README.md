@@ -1,134 +1,134 @@
-# Scatha-Pro (Fabric 1.21.10)
+# Scatha Pro
 
-A feature-rich Minecraft mod for enhanced Scatha farming on Hypixel Skyblock. This is a complete rewrite of the original Forge 1.8.9 mod for Fabric 1.21.10.
+*Advanced Scatha farming companion for Hypixel Skyblock*
+
+## Overview
+
+Scatha Pro is a Fabric mod designed to enhance your Scatha farming experience on Hypixel Skyblock. It provides real-time statistics, smart alerts, and automation features to maximize your farming efficiency.
 
 ## Features
 
-### Alerts & Notifications
-- **Scatha Spawn Alerts** - Get notified instantly when Scatha spawns
-- **Kill Alerts** - Receive alerts when you defeat Scatha
-- **Pet Drop Alerts** - Get notified on rare, epic, and legendary pet drops
-- **Customizable Alert Modes** - Choose between sound, title, or chat notifications
-- **Volume Control** - Adjust alert volume to your preference
-
-### Statistics Tracking
-- **Session Stats** - Track kills and drops for the current session
-- **Total Stats** - Monitor lifetime statistics
-- **Pet Drop Tracking** - Separate tracking for rare, epic, and legendary drops
-- **Worm Kill Tracking** - Keep track of regular worm kills
-- **Persistent Data** - Stats are saved automatically
-
-### Display & Overlays
-- **Customizable Overlay** - Drag-and-drop overlay showing current stats
-- **Multiple Display Formats** - Choose what information to display
-- **Adjustable Scale** - Resize the overlay to your preference
-- **Position Memory** - Remember your overlay position between sessions
-
-### Configuration
-- **In-Game Settings** - Access settings with keybinds
-- **Config Files** - Edit `config/scathapro/config.json` for advanced options
-- **Persistent Configuration** - All settings saved automatically
-
-### Achievements
-- **First Kill** - Get your first Scatha kill
-- **Milestone Kills** - Achievements at 10, 100, and 1000 kills
-- **Pet Drops** - Unlock achievements for pet drops
-- **Farming Streaks** - Achieve multi-day farming streaks
+✨ **Core Features:**
+- Real-time farming statistics and tracking
+- Intelligent spawn alerts with customizable thresholds
+- Advanced overlay system for quick information access
+- Sound and visual notifications
+- Auto-farm capabilities with safety checks
+- Achievement system
+- Comprehensive logging and debugging
 
 ## Installation
 
-1. Download the latest release from [Modrinth](https://modrinth.com/mod/scatha-pro)
-2. Ensure you have Fabric Loader installed
-3. Place the `.jar` file in your `mods` folder
-4. Launch Minecraft with the Fabric profile
-5. Join a Hypixel Skyblock server in Crystal Hollows
+### Requirements
+- Minecraft 1.21.1
+- Fabric Loader 0.16.5 or later
+- Fabric API
+- Fabric Language Kotlin
+- Java 21+
 
-## Keybinds
+### Setup
 
-- **O** - Toggle Overlay
-- **P** - Toggle Statistics Display
-- **R** - Reset Statistics (requires confirmation)
-
-Keybinds can be customized in Minecraft's Controls menu under "Scatha-Pro"
+1. **Install Fabric** using the [Fabric Installer](https://fabricmc.net/use/installer/)
+2. **Download the mod** from [Releases](./releases)
+3. **Place the JAR** in your `~/.minecraft/mods/` folder
+4. **Launch** the game with the Fabric profile
 
 ## Configuration
 
-Configuration files are located in `%appdata%/.minecraft/config/scathapro/` (Windows) or `~/.minecraft/config/scathapro/` (Linux/Mac).
-
-### config.json Structure
+Configuration files are stored in `.minecraft/config/scatha-pro/`
 
 ```json
 {
-  "alerts": {
-    "enableSpawningAlert": true,
-    "enableKillAlert": true,
-    "alertMode": "sound",
-    "alertVolume": 1.0
-  },
-  "display": {
-    "enableOverlay": true,
-    "enableStats": true,
-    "overlayX": 10,
-    "overlayY": 10,
-    "overlayScale": 1.0
-  },
-  "tracking": {
-    "trackKills": true,
-    "trackDrops": true,
-    "trackStats": true
-  },
-  "advanced": {
-    "debugMode": false,
-    "checkForUpdates": true
-  }
+  "enabled": true,
+  "sound_alerts": true,
+  "overlay_enabled": true,
+  "auto_farm": false
 }
 ```
 
-## File Structure
+## Building from Source
 
-- `config/scathapro/config.json` - Main configuration file
-- `config/scathapro/stats.json` - Tracking data and statistics
-- `config/scathapro/achievements.json` - Achievement progress
+```bash
+# Clone the repository
+git clone https://github.com/Kiritosky/Scatha-Pro-Fabric
+cd Scatha-Pro-Fabric
 
-## Permissions
+# Build the project
+./gradlew build
 
-⚠️ **Important**: This mod is based on the original Scatha-Pro by NamelessJu
+# The built JAR will be in: build/libs/scatha-pro-*.jar
+```
 
-- ✅ You may use this mod for private use
-- ✅ You may bundle this mod in modpacks with proper credit
-- ✅ You may modify this mod for personal use
-- ❌ You may NOT publish this mod or derivatives without permission
-- ❌ You may NOT claim this as your own work
+## Development
 
-## Support & Issues
+### Setting Up Your Environment
 
-If you encounter issues:
+```bash
+# Generate IDE run configurations
+./gradlew idea  # For IntelliJ IDEA
 
-1. Check the [GitHub Issues](https://github.com/Kiritosky/Scatha-Pro-Fabric/issues)
-2. Ensure you have the latest version
-3. Verify you're on Minecraft 1.21.10 with Fabric
-4. Check the logs for error messages
+# Start the client
+./gradlew runClient
 
-## Changelog
+# Start the server
+./gradlew runServer
+```
 
-### v1.4.0
-- Complete rewrite for Fabric 1.21.10
-- Modern UI and configuration system
-- Improved statistics tracking
-- New alert system with sound support
-- Achievement system
-- Enhanced overlay rendering
+### Project Structure
 
-## Credits
+```
+src/main/
+├── java/me/kiritosky/scathapro/
+│   ├── ScathaProMod.kt          # Main entry point
+│   ├── ScathaProConfig.kt        # Configuration management
+│   └── [other modules]/          # Feature modules
+└── resources/
+    ├── fabric.mod.json           # Mod metadata
+    ├── scatha-pro.mixins.json   # Mixin configuration
+    └── assets/                   # Textures, sounds, etc.
+```
 
-- **Original Creator**: NamelessJu
-- **Fabric Port**: Kirito
-- **Testing & Feedback**: Hypixel Community
+## Troubleshooting
+
+### Common Issues
+
+**Q: Mod won't load**
+- Ensure you're on Minecraft 1.21.1
+- Check that Fabric API is installed
+- Verify Java 21+ is installed
+
+**Q: Gradle build fails**
+- Run `./gradlew clean` first
+- Delete `.gradle/` folder
+- Ensure JAVA_HOME points to Java 21+
+
+**Q: IDE not recognizing mod sources**
+- Run `./gradlew idea` (IntelliJ) or `./gradlew eclipse` (Eclipse)
+- Refresh IDE project
+
+## Contributing
+
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-Custom License - See LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+- **Issues**: [GitHub Issues](https://github.com/Kiritosky/Scatha-Pro-Fabric/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Kiritosky/Scatha-Pro-Fabric/discussions)
+
+## Credits
+
+- Built with [Fabric](https://fabricmc.net/)
+- Developed for [Hypixel Skyblock](https://hypixel.net/)
 
 ---
 
-**Happy Scatha Farming!** 🐛⚔️
+**Made with ❤️ for the Hypixel Skyblock community**
