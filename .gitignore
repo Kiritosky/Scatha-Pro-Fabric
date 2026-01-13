@@ -1,33 +1,32 @@
-# Gradle
+# Ignore Gradle user home
 .gradle/
-build/
 gradle-app.setting
+!gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
 
-# IDE
+# IDEs
 .idea/
-.vscode/
 *.iml
 *.iws
 *.ipr
-.classpath
 .project
+.classpath
+.c9/
+*.launch
 .settings/
+.vscode
+
+# Build
+build/
+out/
+dist/
 
 # OS
 .DS_Store
-Thumbs.db
-*.swp
-*.swo
-*~
-.venv
+.thumbs.db
 
-# Build outputs
-out/
-*.class
-bin/
-
-# Project specific
-run/
-!gradle/wrapper/*
-.env
-local.properties
+# Mod
+runs/
+*.jar
+!gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
